@@ -12,7 +12,7 @@ export default function RealEstateHero() {
   return (
     <section
       id="real-estate"
-      className="relative overflow-hidden py-28 bg-gradient-to-br from-slate-50 via-white to-blue-50"
+      className="relative overflow-hidden py-16 bg-gradient-to-br from-slate-50 via-white to-blue-50"
     >
       {/* Background Effects */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
