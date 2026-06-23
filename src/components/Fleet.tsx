@@ -1,87 +1,118 @@
-import Image from "next/image";
-import { Users, MessageCircle } from "lucide-react";
+"use client";
 
-const vehicles = [
-  {
-    name: "Sedan",
-    capacity: "4+1 Seater",
-    image: "/fleet/sedan.jpg",
-  },
-  {
-    name: "SUV",
-    capacity: "6+1 Seater",
-    image: "/fleet/suv.jpg",
-  },
-  {
-    name: "Innova Crysta",
-    capacity: "7+1 Seater",
-    image: "/fleet/innova.jpg",
-  },
-  {
-    name: "Tempo Traveller",
-    capacity: "12/17 Seater",
-    image: "/fleet/traveller.jpg",
-  },
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+const vehicleImages = [
+  "/travel/t1.jpeg",
+  "/travel/t2.jpeg",
+  "/travel/t3.jpeg",
+  "/travel/t4.jpeg",
+  "/travel/t5.jpeg",
+  "/travel/t6.jpeg",
+  "/travel/t7.jpeg",
+  "/travel/t8.jpeg",
+  "/travel/t9.jpeg",
+  "/travel/t10.jpeg",
+  "/travel/t11.jpeg",
+  "/travel/t12.jpeg",
+  "/travel/t13.jpeg",
+  "/travel/t14.jpeg",
+  "/travel/t15.jpeg",
+  "/travel/t16.jpeg",
+  "/travel/t17.jpeg",
 ];
 
 export default function Fleet() {
+  // Duplicate array for seamless infinite loop on desktop
+  const duplicatedImages = [...vehicleImages, ...vehicleImages];
+
   return (
     <section
       id="fleet"
-      className="py-24 bg-slate-50"
+      className="py-12 bg-gradient-to-br from-slate-900 via-gray-900 to-black relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <span className="text-blue-600 font-semibold uppercase tracking-wider">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        {/* Header */}
+        <div className="text-center mb-8 md:mb-10">
+          <span className="text-blue-400 font-semibold uppercase tracking-wider text-xs md:text-sm">
             Our Fleet
           </span>
-
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-slate-900">
+          <h2 className="mt-2 md:mt-3 text-2xl md:text-4xl font-bold text-white">
             Travel in Comfort & Style
           </h2>
-
-          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-            Well-maintained vehicles for airport transfers,
-            corporate travel, sightseeing, and outstation trips.
+          <p className="mt-2 md:mt-3 text-slate-400 max-w-2xl mx-auto text-xs md:text-sm px-2">
+            Well-maintained vehicles for airport transfers, corporate travel, 
+            sightseeing, and outstation trips.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {vehicles.map((vehicle) => (
-            <div
-              key={vehicle.name}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
-            >
-              <div className="relative h-60">
+        {/* Mobile: 1-Column Grid - Shows ALL 17 Images */}
+        <div className="md:hidden">
+          <div className="grid grid-cols-1 gap-4">
+            {vehicleImages.map((image, index) => (
+              <div
+                key={index}
+                className="relative w-full aspect-[4/3] rounded-lg overflow-hidden group"
+              >
                 <Image
-                  src={vehicle.image}
-                  alt={vehicle.name}
+                  src={image}
+                  alt={`Fleet vehicle ${index + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
+            ))}
+          </div>
+          <div className="text-center mt-4">
+            <span className="text-slate-400 text-xs">
+              {vehicleImages.length} Vehicles in Our Fleet
+            </span>
+          </div>
+        </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900">
-                  {vehicle.name}
-                </h3>
+        {/* Desktop: Infinite Marquee */}
+        <div className="hidden md:block relative overflow-hidden">
+          {/* Gradient Overlays */}
+          <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-slate-900 to-transparent z-10" />
+          <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-slate-900 to-transparent z-10" />
 
-                <div className="flex items-center gap-2 mt-3 text-slate-600">
-                  <Users size={18} />
-                  <span>{vehicle.capacity}</span>
-                </div>
-
-                <a
-                  href="https://wa.me/919999999999"
-                  target="_blank"
-                  className="mt-6 flex items-center justify-center gap-2 bg-green-600 text-white py-3 rounded-xl hover:bg-green-700 transition"
-                >
-                  <MessageCircle size={18} />
-                  Enquire Now
-                </a>
+          <motion.div
+            className="flex gap-4"
+            animate={{
+              x: [0, -100 * vehicleImages.length],
+            }}
+            transition={{
+              x: {
+                duration: 40,
+                repeat: Infinity,
+                ease: "linear",
+                repeatType: "loop",
+              },
+            }}
+          >
+            {duplicatedImages.map((image, index) => (
+              <div
+                key={index}
+                className="relative flex-shrink-0 w-72 h-48 rounded-xl overflow-hidden group"
+              >
+                <Image
+                  src={image}
+                  alt={`Fleet vehicle ${index + 1}`}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 1024px) 50vw, 33vw"
+                />
               </div>
-            </div>
-          ))}
+            ))}
+          </motion.div>
+
+          <div className="text-center mt-6">
+            <span className="text-slate-400 text-sm">
+              {vehicleImages.length} Vehicles in Our Fleet
+            </span>
+          </div>
         </div>
       </div>
     </section>
