@@ -492,22 +492,6 @@ const locations: Location[] = [
   },
 ];
 
-// Luxury Vehicle type
-interface LuxuryVehicle {
-  name: string;
-  class: string;
-}
-
-// Luxury Fleet - Text only
-const luxuryVehicles: LuxuryVehicle[] = [
-  { name: "Mercedes-Benz", class: "Luxury Sedan" },
-  { name: "BMW", class: "Premium SUV" },
-  { name: "Audi", class: "Executive Car" },
-  { name: "Toyota Innova", class: "Family Van" },
-  { name: "Tempo Traveller", class: "Group Travel" },
-  { name: "Volvo Buses", class: "Luxury Coach" },
-];
-
 // Floating images for background
 const floatingImages: string[] = [
   "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&h=200&fit=crop",
@@ -630,7 +614,6 @@ export default function Services() {
           />
         </motion.div>
 
-        {/* Rest of the component remains the same... */}
         {/* Animated Stats Counters */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -743,40 +726,6 @@ export default function Services() {
                 </motion.div>
               );
             })}
-          </div>
-        </motion.div>
-
-        {/* Luxury Vehicle Showcase */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1.2, duration: 0.5 }}
-          className="mb-6 md:mb-8 w-full"
-        >
-          <div className="glass-card bg-gradient-to-r from-orange-500/10 to-red-500/10 backdrop-blur-lg rounded-xl md:rounded-2xl p-3 md:p-6 border border-orange-500/20 w-full">
-            <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
-              <Gem className="w-4 h-4 md:w-6 md:h-6 text-orange-400" />
-              <h3 className="text-sm md:text-lg font-bold text-white">Our Premium Luxury Fleet</h3>
-              <span className="text-[8px] md:text-xs text-orange-400/60 ml-auto">VIP Experience</span>
-            </div>
-            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-1.5 md:gap-3">
-              {luxuryVehicles.map((vehicle, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: 1.3 + idx * 0.05, duration: 0.3 }}
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  className="bg-white/5 backdrop-blur-sm rounded-lg md:rounded-xl p-1.5 md:p-3 text-center border border-white/10 hover:border-orange-500/30 transition-all duration-300"
-                >
-                  <div className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-0.5 md:mb-2 rounded-full bg-orange-500/20 flex items-center justify-center">
-                    <span className="text-base md:text-xl">🚗</span>
-                  </div>
-                  <p className="text-[8px] md:text-xs font-semibold text-white truncate">{vehicle.name}</p>
-                  <p className="text-[6px] md:text-[10px] text-orange-400/70 truncate">{vehicle.class}</p>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </motion.div>
 

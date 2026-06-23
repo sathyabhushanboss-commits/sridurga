@@ -104,12 +104,20 @@ export default function Footer() {
 
               <div className="flex gap-3">
                 <Phone size={18} />
-                <span>+91 99808 07508</span>
+                <div className="flex flex-col">
+                  <span>+91 99808 07508</span>
+                  <span>+91 99805 67508</span>
+                  <span>+91 94482 25920</span>
+                </div>
               </div>
 
               <div className="flex gap-3">
                 <Mail size={18} />
-                <span>info@sridurgagroup.in</span>
+                <div className="flex flex-col">
+                  <span>sdtt.koramangala@gmail.com</span>
+                  <span>sridurgatravels.koramangala@gmail.com</span>
+                  <span>sridurgarelators@gmail.com</span>
+                </div>
               </div>
 
               <div className="flex gap-3">
