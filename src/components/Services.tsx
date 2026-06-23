@@ -233,263 +233,24 @@ const stats: Stat[] = [
   { icon: Shield, value: 100, label: "Secure Transactions", suffix: "%" },
 ];
 
-// Location type
-interface Location {
-  name: string;
-  state: string;
-  region: string;
-  description: string;
-  image: string;
-}
-
-// 35+ Famous Places with Unsplash Images
-const locations: Location[] = [
-  // Karnataka
-  { 
-    name: "Mangalore", 
-    state: "Karnataka", 
-    region: "Coastal",
-    description: "Gateway to coastal Karnataka with pristine beaches and delicious seafood",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Udupi", 
-    state: "Karnataka", 
-    region: "Coastal",
-    description: "Famous for its ancient Sri Krishna Temple and authentic South Indian cuisine",
-    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Kondapura", 
-    state: "Karnataka", 
-    region: "Coastal",
-    description: "Scenic coastal town known for its serene beaches and coconut groves",
-    image: "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Belagavi", 
-    state: "Karnataka", 
-    region: "Northern",
-    description: "Historical city famous for its forts, waterfalls, and military heritage",
-    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Bengaluru", 
-    state: "Karnataka", 
-    region: "Southern",
-    description: "India's Silicon Valley, known for its vibrant nightlife and green spaces",
-    image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Mysuru", 
-    state: "Karnataka", 
-    region: "Southern",
-    description: "City of palaces, famous for the grand Mysore Dasara festival",
-    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Hampi", 
-    state: "Karnataka", 
-    region: "Central",
-    description: "UNESCO World Heritage site with magnificent Vijayanagara Empire ruins",
-    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Coorg", 
-    state: "Karnataka", 
-    region: "Western Ghats",
-    description: "Scotland of India, famous for coffee plantations and misty hills",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop"
-  },
-  // Goa
-  { 
-    name: "Goa", 
-    state: "Goa", 
-    region: "Coastal",
-    description: "India's party capital with stunning beaches, nightlife, and Portuguese heritage",
-    image: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&h=400&fit=crop"
-  },
-  // Telangana
-  { 
-    name: "Hyderabad", 
-    state: "Telangana", 
-    region: "Southern",
-    description: "City of pearls and biryani, famous for Charminar and IT hub",
-    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=400&fit=crop"
-  },
-  // Delhi NCR
-  { 
-    name: "Delhi", 
-    state: "Delhi NCR", 
-    region: "Northern",
-    description: "India's capital city, blending ancient history with modern urban culture",
-    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=400&fit=crop"
-  },
-  // Odisha
-  { 
-    name: "Bhubaneswar", 
-    state: "Odisha", 
-    region: "Eastern",
-    description: "Temple City of India, famous for ancient Kalinga architecture",
-    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&h=400&fit=crop"
-  },
-  // Maharashtra
-  { 
-    name: "Mumbai", 
-    state: "Maharashtra", 
-    region: "Western",
-    description: "Financial capital of India, home to Bollywood and iconic landmarks",
-    image: "https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Pune", 
-    state: "Maharashtra", 
-    region: "Western",
-    description: "Cultural capital of Maharashtra, known for its educational institutions",
-    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Nagpur", 
-    state: "Maharashtra", 
-    region: "Central",
-    description: "Orange city, famous for its winter climate and tiger reserves",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop"
-  },
-  // Tamil Nadu
-  { 
-    name: "Chennai", 
-    state: "Tamil Nadu", 
-    region: "Southern",
-    description: "Gateway to South India, famous for its beaches and Dravidian temples",
-    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Kanyakumari", 
-    state: "Tamil Nadu", 
-    region: "Southern",
-    description: "Southernmost tip of India where three oceans meet, famous for sunrise views",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Ooty", 
-    state: "Tamil Nadu", 
-    region: "Southern",
-    description: "Queen of hill stations, famous for its tea gardens and scenic beauty",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Kodaikanal", 
-    state: "Tamil Nadu", 
-    region: "Southern",
-    description: "Princess of hill stations, known for its star-shaped lake and pine forests",
-    image: "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=800&h=400&fit=crop"
-  },
-  // Kerala
-  { 
-    name: "Kerala", 
-    state: "Kerala", 
-    region: "Southern",
-    description: "God's Own Country, famous for backwaters, Ayurveda, and tropical beauty",
-    image: "https://images.unsplash.com/photo-1602216056096-3b40f0a4d49d?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Munnar", 
-    state: "Kerala", 
-    region: "Southern",
-    description: "Paradise of tea plantations, lush green valleys, and misty mountains",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Alleppey", 
-    state: "Kerala", 
-    region: "Southern",
-    description: "Venice of the East, famous for its serene backwaters and houseboat rides",
-    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&h=400&fit=crop"
-  },
-  // Uttar Pradesh
-  { 
-    name: "Agra", 
-    state: "Uttar Pradesh", 
-    region: "Northern",
-    description: "Home to the iconic Taj Mahal, a symbol of eternal love and Mughal architecture",
-    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Varanasi", 
-    state: "Uttar Pradesh", 
-    region: "Northern",
-    description: "One of the oldest living cities, famous for its ghats and spiritual significance",
-    image: "https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=800&h=400&fit=crop"
-  },
-  // Rajasthan
-  { 
-    name: "Jaipur", 
-    state: "Rajasthan", 
-    region: "Northern",
-    description: "Pink City, famous for its royal palaces, forts, and vibrant bazaars",
-    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Udaipur", 
-    state: "Rajasthan", 
-    region: "Northern",
-    description: "City of Lakes, known for its romantic ambiance and magnificent palaces",
-    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Jaisalmer", 
-    state: "Rajasthan", 
-    region: "Northern",
-    description: "Golden City, famous for its sandstone architecture and desert safaris",
-    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&h=400&fit=crop"
-  },
-  // Gujarat
-  { 
-    name: "Ahmedabad", 
-    state: "Gujarat", 
-    region: "Western",
-    description: "Cultural and commercial hub of Gujarat, rich in textile heritage",
-    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&h=400&fit=crop"
-  },
-  // West Bengal
-  { 
-    name: "Kolkata", 
-    state: "West Bengal", 
-    region: "Eastern",
-    description: "City of Joy, famous for its literary heritage, art, and Durga Puja",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=400&fit=crop"
-  },
-  // Punjab
-  { 
-    name: "Amritsar", 
-    state: "Punjab", 
-    region: "Northern",
-    description: "Home to the Golden Temple, the spiritual heart of Sikhism",
-    image: "https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=800&h=400&fit=crop"
-  },
-  // Himachal Pradesh
-  { 
-    name: "Manali", 
-    state: "Himachal Pradesh", 
-    region: "Northern",
-    description: "Snow-capped paradise, famous for adventure sports and scenic valleys",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop"
-  },
-  { 
-    name: "Shimla", 
-    state: "Himachal Pradesh", 
-    region: "Northern",
-    description: "Queen of Hills, the former summer capital of British India",
-    image: "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=800&h=400&fit=crop"
-  },
-  // Uttarakhand
-  { 
-    name: "Rishikesh", 
-    state: "Uttarakhand", 
-    region: "Northern",
-    description: "Yoga Capital of the World, famous for its spiritual retreats and Ganga Aarti",
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=400&fit=crop"
-  },
+// Trip Images - s1.png to s16.png
+const tripImages = [
+  "/trip/s1.png",
+  "/trip/s2.png",
+  "/trip/s3.png",
+  "/trip/s4.png",
+  "/trip/s5.png",
+  "/trip/s6.png",
+  "/trip/s7.png",
+  "/trip/s8.png",
+  "/trip/s9.png",
+  "/trip/s10.png",
+  "/trip/s11.png",
+  "/trip/s12.png",
+  "/trip/s13.png",
+  "/trip/s14.png",
+  "/trip/s15.png",
+  "/trip/s16.png",
 ];
 
 // Floating images for background
@@ -836,7 +597,7 @@ export default function Services() {
         </motion.div>
 
         {/* ============================================ */}
-        {/* LOCATIONS - 1 COL MOBILE, 2 COL DESKTOP */}
+        {/* TRIP IMAGES - 2 COL DESKTOP, 1 COL MOBILE */}
         {/* ============================================ */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -851,7 +612,7 @@ export default function Services() {
             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
             
             {/* Header */}
-            <div className="flex items-center justify-center gap-1.5 md:gap-3 mb-2 md:mb-4 flex-wrap">
+            <div className="flex items-center justify-center gap-1.5 md:gap-3 mb-3 md:mb-5 flex-wrap">
               <motion.div
                 initial={{ rotate: 0 }}
                 animate={{ rotate: 360 }}
@@ -861,31 +622,17 @@ export default function Services() {
               </motion.div>
               <h3 className="text-sm md:text-xl font-bold text-white flex items-center gap-1 md:gap-2">
                 <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">
-                  We Serve Across India
+                  Our Trip Gallery
                 </span>
-                <Globe className="w-3.5 h-3.5 md:w-5 md:h-5 text-emerald-400 ml-0.5 md:ml-2" />
               </h3>
               <span className="text-[8px] md:text-xs text-emerald-400/60 bg-emerald-500/10 px-1.5 md:px-3 py-0.5 md:py-1 rounded-full border border-emerald-500/20">
-                {locations.length}+ Cities
+                {tripImages.length} Photos
               </span>
             </div>
 
-            {/* SEO Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 2.0, duration: 0.5 }}
-              className="text-center text-[8px] md:text-xs text-gray-400 mb-3 md:mb-6 max-w-3xl mx-auto leading-relaxed px-1"
-            >
-              Sri Durga Groups provides premium <strong className="text-blue-400">travel services</strong> and 
-              <strong className="text-emerald-400"> real estate solutions</strong> across <strong className="text-cyan-400">{locations.length}+ cities</strong> in India. 
-              From <strong className="text-blue-400">airport transfers</strong> to 
-              <strong className="text-purple-400"> property investments</strong>, we are your trusted partner nationwide.
-            </motion.p>
-
-            {/* Location Grid - 1 col mobile, 2 col desktop */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 w-full">
-              {locations.map((location, idx) => (
+            {/* Trip Images Grid - 1 col mobile, 2 col desktop */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 w-full">
+              {tripImages.map((image, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -898,122 +645,34 @@ export default function Services() {
                     damping: 12
                   }}
                   whileHover={{ 
-                    scale: 1.01,
+                    scale: 1.02,
                     transition: { duration: 0.2 }
                   }}
-                  className="group relative bg-white/5 backdrop-blur-sm rounded-lg md:rounded-xl overflow-hidden border border-white/10 hover:border-blue-500/40 transition-all duration-300 cursor-default w-full"
+                  className="group relative bg-white/5 backdrop-blur-sm rounded-lg md:rounded-xl overflow-hidden border border-white/10 hover:border-blue-500/40 transition-all duration-300 cursor-default w-full aspect-[4/3]"
                 >
-                  <div className="flex flex-col sm:flex-row w-full">
-                    {/* Location Image */}
-                    <div className="relative w-full sm:w-28 md:w-36 lg:w-40 h-32 sm:h-auto flex-shrink-0 overflow-hidden">
-                      <Image
-                        src={location.image}
-                        alt={`${location.name} - Sri Durga Groups travel and real estate services`}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                        unoptimized
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent sm:bg-gradient-to-r sm:from-black/80 sm:via-black/30 sm:to-transparent" />
-                      
-                      {/* State Badge */}
-                      <div className="absolute top-1.5 right-1.5 md:top-2 md:right-2 px-1.5 md:px-2 py-0.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/10">
-                        <span className="text-[6px] md:text-[8px] uppercase tracking-wider text-gray-300">
-                          {location.state}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Location Info - FONTS INCREASED BY 35% */}
-                    <div className="relative p-2 md:p-4 flex-1 flex flex-col justify-center min-w-0">
-                      <div className="flex items-center justify-between gap-1 md:gap-2">
-                        <h4 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300 truncate">
-                          {location.name}
-                        </h4>
-                        <MapPin className="w-3 h-3 md:w-4 md:h-4 text-blue-400/60 flex-shrink-0" />
-                      </div>
-                      <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-1 md:mt-1.5 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 line-clamp-2">
-                        {location.description}
-                      </p>
-                      <div className="mt-1.5 md:mt-2.5 flex items-center gap-1.5 md:gap-2.5 flex-wrap">
-                        <span className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs text-gray-500">✦</span>
-                        <span className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs text-gray-400 font-medium">{location.region}</span>
-                        <span className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs text-gray-600">•</span>
-                        <span className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs text-gray-400 font-medium">{location.state}</span>
-                      </div>
-                    </div>
-
-                    {/* Hover Glow */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <Image
+                    src={image}
+                    alt={`Trip photo ${idx + 1}`}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  {/* Image Number Overlay */}
+                  <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/50 backdrop-blur-sm rounded-md">
+                    <span className="text-white text-[10px] font-medium">#{idx + 1}</span>
                   </div>
+                  {/* Hover Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.div>
               ))}
-
-              {/* All Over India - Special Card */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                transition={{ 
-                  delay: 2.1 + locations.length * 0.025, 
-                  duration: 0.5,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 12
-                }}
-                whileHover={{ 
-                  scale: 1.01,
-                  transition: { duration: 0.2 }
-                }}
-                className="group relative bg-gradient-to-br from-emerald-500/20 to-teal-500/20 backdrop-blur-sm rounded-lg md:rounded-xl overflow-hidden border border-emerald-500/30 hover:border-emerald-400/60 transition-all duration-300 cursor-default w-full md:col-span-2"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/10 to-teal-600/10" />
-                <div className="relative p-3 md:p-6 flex flex-col sm:flex-row items-center justify-between gap-2 md:gap-4">
-                  <div className="flex items-center gap-2 md:gap-4 w-full sm:w-auto">
-                    <div className="w-8 h-8 md:w-14 md:h-14 rounded-full bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                      <Target className="w-4 h-4 md:w-7 md:h-7 text-emerald-400" />
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="text-sm md:text-lg font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                        All Over India
-                      </h4>
-                      <p className="text-[8px] md:text-xs text-gray-400 truncate">
-                        Nationwide coverage with premium travel and real estate services
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1.5 md:gap-2 flex-shrink-0">
-                    <Radio className="w-3 h-3 md:w-4 md:h-4 text-emerald-400 animate-pulse" />
-                    <span className="text-[8px] md:text-xs text-emerald-400/60">Live Coverage</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                </div>
-              </motion.div>
             </div>
-
-            {/* SEO Bottom Text */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
-              transition={{ delay: 2.1 + locations.length * 0.025 + 0.3, duration: 0.5 }}
-              className="text-center text-xs sm:text-sm md:text-base lg:text-lg font-medium text-gray-300 mt-4 md:mt-6 max-w-5xl mx-auto leading-relaxed px-2 py-2 md:py-3 bg-white/5 rounded-xl border border-white/5 backdrop-blur-sm"
-            >
-              <span className="text-gray-400">✦</span> 
-              Serving <strong className="text-blue-400 text-sm sm:text-base md:text-lg">{locations.length}+ cities</strong> across 
-              <strong className="text-cyan-400 text-sm sm:text-base md:text-lg"> 20+ states</strong> with 
-              <strong className="text-blue-400 text-sm sm:text-base md:text-lg"> premium travel</strong> and 
-              <strong className="text-emerald-400 text-sm sm:text-base md:text-lg"> real estate services</strong> 
-              <span className="text-gray-500 mx-1 md:mx-2">•</span>
-              <span className="text-gray-400"> From coastal to mountain regions</span> 
-              <span className="text-gray-500 mx-1 md:mx-2">•</span>
-              <span className="text-gray-400"> Trusted nationwide</span> 
-              <span className="text-gray-400">✦</span>
-            </motion.p>
 
             {/* Animated Border Line */}
             <motion.div
               initial={{ width: 0 }}
               animate={isInView ? { width: "70%" } : {}}
-              transition={{ delay: 2.2 + locations.length * 0.025, duration: 1 }}
-              className="h-0.5 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent mx-auto mt-2 md:mt-4 rounded-full"
+              transition={{ delay: 2.2 + tripImages.length * 0.025, duration: 1 }}
+              className="h-0.5 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent mx-auto mt-4 md:mt-6 rounded-full"
             />
           </div>
         </motion.div>
@@ -1035,7 +694,7 @@ export default function Services() {
             <button className="px-3 md:px-8 py-1.5 md:py-3 bg-white/5 backdrop-blur-sm text-white rounded-lg md:rounded-xl font-semibold border border-white/10 hover:border-white/20 transition-all duration-300 text-[10px] md:text-sm hover:scale-105">
               <span className="flex items-center gap-1 md:gap-2">
                 <Smartphone className="w-3 h-3 md:w-4 md:h-4" />
-                +91 98765 43210
+                99808 07508
               </span>
             </button>
           </div>
