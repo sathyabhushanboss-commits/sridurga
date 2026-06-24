@@ -1,474 +1,142 @@
-"use client";
-
 import {
   Phone,
   MapPin,
-  MessageCircle,
   Clock3,
-  Send,
-  Building2,
-  Car,
-  Home,
-  Mail,
-  Globe,
-  Calendar,
-  Users,
+  MessageCircle,
 } from "lucide-react";
+
+import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-8 sm:py-12 md:py-16 bg-slate-950 text-white relative overflow-hidden"
+      className="py-16 sm:py-20 md:py-24 bg-slate-50"
     >
-      {/* Background Decorations */}
-      <div className="absolute top-0 right-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-blue-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-        <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <span className="text-blue-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">
+        <div className="text-center mb-12 sm:mb-14 md:mb-16">
+          <span className="text-blue-600 font-semibold uppercase tracking-widest text-xs sm:text-sm">
             Get In Touch
           </span>
-
-          <h1 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-            <span className="text-cyan-400">Sri Durga</span> Groups
-          </h1>
-
-          <p className="mt-2 sm:mt-3 md:mt-4 text-base sm:text-lg md:text-xl text-slate-300 font-semibold">
-            Tours & Travels | Real Estate
+          <h2 className="mt-2 sm:mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
+            Contact Us
+          </h2>
+          <p className="mt-3 sm:mt-4 text-slate-600 text-sm sm:text-base">
+            Get in touch for travel bookings and real estate enquiries.
           </p>
-
-          <div className="mt-2 sm:mt-3 h-0.5 w-16 sm:w-20 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
-
-          <p className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm md:text-base lg:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed px-2">
-            Connect with <span className="text-white font-medium">Sri Durga Groups</span> for premium 
-            <span className="text-blue-400"> travel services</span> and trusted 
-            <span className="text-emerald-400"> real estate solutions</span> across Bengaluru and Karnataka. 
-            Whether you need airport transfers, outstation trips, property sales, rentals, or leasing, 
-            our expert team is here to assist you 7 days a week.
-          </p>
+          <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
 
-          {/* Left Side - Contact Information */}
-          <div>
+          {/* Left - Contact Information */}
+          <div className="space-y-6 sm:space-y-8">
 
-            <div className="bg-slate-900 rounded-2xl p-5 sm:p-6 md:p-8 border border-slate-800">
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
 
-              <div className="flex items-center gap-3 mb-4 sm:mb-5 md:mb-6">
-                <div className="p-1.5 sm:p-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg">
-                  <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+              <div className="flex items-start gap-4 mb-5 sm:mb-6">
+                <div className="p-2.5 bg-blue-50 rounded-xl">
+                  <Phone className="text-blue-600 w-5 h-5" />
                 </div>
-                <h2 className="text-xl sm:text-2xl font-semibold">
-                  Sri Durga Groups
-                </h2>
-              </div>
-
-              <p className="text-slate-400 mb-5 sm:mb-6 md:mb-8 leading-relaxed text-xs sm:text-sm">
-                Your trusted partner for <span className="text-white">tours & travels</span> and 
-                <span className="text-white"> real estate</span> services in Bengaluru since 1998.
-              </p>
-
-              <div className="space-y-4 sm:space-y-5 md:space-y-6">
-
-                {/* Phone */}
-                <div className="flex gap-3 sm:gap-4 group">
-                  <div className="p-2 sm:p-2.5 bg-blue-500/10 rounded-xl group-hover:bg-blue-500/20 transition-colors flex-shrink-0 h-fit">
-                    <Phone className="text-blue-400" size={18} />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h4 className="text-xs sm:text-sm font-medium text-slate-300">
-                      Call Us - Tours & Travels
-                    </h4>
-                    <a
-                      href="tel:+919980807508"
-                      className="text-slate-400 hover:text-white transition-colors text-base sm:text-lg font-semibold block truncate"
-                    >
-                      +91 99808 07508
-                    </a>
-                    <p className="text-slate-500 text-[10px] sm:text-xs mt-0.5">
-                      Available 9 AM - 9 PM (All Days)
-                    </p>
-                  </div>
-                </div>
-
-                {/* WhatsApp */}
-                <div className="flex gap-3 sm:gap-4 group">
-                  <div className="p-2 sm:p-2.5 bg-green-500/10 rounded-xl group-hover:bg-green-500/20 transition-colors flex-shrink-0 h-fit">
-                    <MessageCircle className="text-green-400" size={18} />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h4 className="text-xs sm:text-sm font-medium text-slate-300">
-                      WhatsApp
-                    </h4>
-                    <a
-                      href="https://wa.me/919980807508"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-white transition-colors text-base sm:text-lg font-semibold block truncate"
-                    >
-                      Chat with Us
-                    </a>
-                    <p className="text-slate-500 text-[10px] sm:text-xs mt-0.5">
-                      Quick response on WhatsApp
-                    </p>
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div className="flex gap-3 sm:gap-4 group">
-                  <div className="p-2 sm:p-2.5 bg-purple-500/10 rounded-xl group-hover:bg-purple-500/20 transition-colors flex-shrink-0 h-fit">
-                    <Mail className="text-purple-400" size={18} />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h4 className="text-xs sm:text-sm font-medium text-slate-300">
-                      Email Us
-                    </h4>
-                    <a
-                      href="mailto:sridurgatravels.koramangala@gmail.com"
-                      className="text-slate-400 hover:text-white transition-colors text-sm sm:text-base lg:text-lg font-semibold block truncate"
-                    >
-                      sridurgatravels.koramangala@gmail.com
-                    </a>
-                    <p className="text-slate-500 text-[10px] sm:text-xs mt-0.5">
-                      For general enquiries
-                    </p>
-                  </div>
-                </div>
-
-                {/* Address */}
-                <div className="flex gap-3 sm:gap-4 group">
-                  <div className="p-2 sm:p-2.5 bg-red-500/10 rounded-xl group-hover:bg-red-500/20 transition-colors flex-shrink-0 h-fit">
-                    <MapPin className="text-red-400" size={18} />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h4 className="text-xs sm:text-sm font-medium text-slate-300">
-                      Office Address
-                    </h4>
-                    <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                      537, Adugodi Main Road,
-                      <br />
-                      Near Yashila, Koramangala 8th Block,
-                      <br />
-                      Bengaluru - 560095, Karnataka
-                    </p>
-                    <p className="text-slate-500 text-[10px] sm:text-xs mt-1">
-                      Landmark: Near Yashila Junction
-                    </p>
-                  </div>
-                </div>
-
-                {/* Working Hours */}
-                <div className="flex gap-3 sm:gap-4 group">
-                  <div className="p-2 sm:p-2.5 bg-yellow-500/10 rounded-xl group-hover:bg-yellow-500/20 transition-colors flex-shrink-0 h-fit">
-                    <Clock3 className="text-yellow-400" size={18} />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h4 className="text-xs sm:text-sm font-medium text-slate-300">
-                      Working Hours
-                    </h4>
-                    <p className="text-white font-medium text-base sm:text-lg">
-                      9:00 AM - 9:00 PM
-                    </p>
-                    <p className="text-slate-400 text-xs sm:text-sm">
-                      Monday to Sunday (All Days Open)
-                    </p>
-                    <p className="text-slate-500 text-[10px] sm:text-xs mt-1">
-                      Bookings & Enquiries welcome 24/7 via WhatsApp
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Quick Service Links */}
-              <div className="mt-6 sm:mt-7 md:mt-8 pt-5 sm:pt-6 border-t border-slate-800">
-                <h4 className="text-xs sm:text-sm font-medium text-slate-300 mb-2 sm:mb-3">
-                  Our Services
-                </h4>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-slate-800 rounded-full text-[10px] sm:text-xs text-slate-300 flex items-center gap-1 sm:gap-1.5">
-                    <Car className="w-3 h-3 text-blue-400" />
-                    Airport Transfers
-                  </span>
-                  <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-slate-800 rounded-full text-[10px] sm:text-xs text-slate-300 flex items-center gap-1 sm:gap-1.5">
-                    <Car className="w-3 h-3 text-cyan-400" />
-                    Outstation Trips
-                  </span>
-                  <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-slate-800 rounded-full text-[10px] sm:text-xs text-slate-300 flex items-center gap-1 sm:gap-1.5">
-                    <Home className="w-3 h-3 text-emerald-400" />
-                    Property Rentals
-                  </span>
-                  <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-slate-800 rounded-full text-[10px] sm:text-xs text-slate-300 flex items-center gap-1 sm:gap-1.5">
-                    <Building2 className="w-3 h-3 text-violet-400" />
-                    Property Sales
-                  </span>
-                  <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-slate-800 rounded-full text-[10px] sm:text-xs text-slate-300 flex items-center gap-1 sm:gap-1.5">
-                    <Calendar className="w-3 h-3 text-purple-400" />
-                    Holiday Packages
-                  </span>
-                </div>
-              </div>
-
-              {/* Trust Badges */}
-              <div className="mt-4 sm:mt-5 md:mt-6 grid grid-cols-3 gap-2 sm:gap-3 pt-4 sm:pt-5 border-t border-slate-800">
-                <div className="text-center">
-                  <p className="text-cyan-400 font-bold text-base sm:text-lg">25+</p>
-                  <p className="text-slate-500 text-[8px] sm:text-[10px] uppercase tracking-wider">Years of Trust</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-blue-400 font-bold text-base sm:text-lg">10K+</p>
-                  <p className="text-slate-500 text-[8px] sm:text-[10px] uppercase tracking-wider">Happy Clients</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-emerald-400 font-bold text-base sm:text-lg">500+</p>
-                  <p className="text-slate-500 text-[8px] sm:text-[10px] uppercase tracking-wider">Properties</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Right Side - Contact Form */}
-          <div>
-
-            <div className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 text-slate-900 shadow-2xl">
-
-              <div className="flex items-center gap-3 mb-4 sm:mb-5 md:mb-6">
-                <div className="p-1.5 sm:p-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg">
-                  <Send className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-                  Quick Enquiry
-                </h2>
-              </div>
-
-              <p className="text-slate-500 text-xs sm:text-sm mb-4 sm:mb-5 md:mb-6 leading-relaxed">
-                Fill in the details below and our team will get back to you within 30 minutes. 
-                We provide expert assistance for <strong className="text-blue-600">Tours & Travels</strong> and 
-                <strong className="text-emerald-600"> Real Estate</strong> requirements.
-              </p>
-
-              <form className="space-y-3 sm:space-y-4">
-
                 <div>
-                  <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
-                    Full Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your full name"
-                    className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors text-sm"
-                    required
-                  />
+                  <h3 className="font-semibold text-slate-900 text-sm sm:text-base">
+                    Phone
+                  </h3>
+                  <a href="tel:+919980807508" className="text-slate-600 hover:text-blue-600 transition-colors text-sm sm:text-base">
+                    +91 99808 07508
+                  </a>
                 </div>
+              </div>
 
-                <div>
-                  <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="Enter your phone number"
-                    className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors text-sm"
-                    required
-                  />
+              <div className="flex items-start gap-4 mb-5 sm:mb-6">
+                <div className="p-2.5 bg-green-50 rounded-xl">
+                  <MessageCircle className="text-green-600 w-5 h-5" />
                 </div>
-
                 <div>
-                  <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
-                    Service Required <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors text-sm appearance-none bg-white"
-                    required
+                  <h3 className="font-semibold text-slate-900 text-sm sm:text-base">
+                    WhatsApp
+                  </h3>
+                  <a 
+                    href="https://wa.me/919980807508" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-green-600 transition-colors text-sm sm:text-base"
                   >
-                    <option value="">Select a service</option>
-                    <option value="airport-transfer">Airport Transfer</option>
-                    <option value="outstation-trip">Outstation Trip</option>
-                    <option value="corporate-travel">Corporate Travel</option>
-                    <option value="holiday-package">Holiday Package</option>
-                    <option value="tempo-traveller">Tempo Traveller Rental</option>
-                    <option value="property-rental">Property Rental</option>
-                    <option value="property-sale">Property Sale</option>
-                    <option value="property-lease">Property Lease</option>
-                    <option value="land-sale">Site & Land Sale</option>
-                    <option value="other">Other</option>
-                  </select>
+                    +91 99808 07508
+                  </a>
+                  <p className="text-slate-400 text-xs mt-0.5">
+                    Quick response on WhatsApp
+                  </p>
                 </div>
+              </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div>
-                    <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
-                      Pickup / Location
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Enter location"
-                      className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
-                      Destination (if travel)
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Enter destination"
-                      className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors text-sm"
-                    />
-                  </div>
+              <div className="flex items-start gap-4 mb-5 sm:mb-6">
+                <div className="p-2.5 bg-red-50 rounded-xl">
+                  <MapPin className="text-red-600 w-5 h-5" />
                 </div>
-
                 <div>
-                  <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
-                    Travel / Property Details
-                  </label>
-                  <textarea
-                    rows={4}
-                    placeholder="Tell us about your travel or property requirement..."
-                    className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors resize-none text-sm"
-                  />
+                  <h3 className="font-semibold text-slate-900 text-sm sm:text-base">
+                    Address
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    537, Adugodi Main Road,
+                    <br />
+                    Koramangala 8th Block,
+                    <br />
+                    Bengaluru - 560095
+                  </p>
+                  <p className="text-slate-400 text-xs mt-1">
+                    Landmark: Near Yashila Junction
+                  </p>
                 </div>
+              </div>
 
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white py-3 sm:py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] text-sm sm:text-base shadow-lg"
-                >
-                  <Send size={16} />
-                  Send Enquiry
-                </button>
+              <div className="flex items-start gap-4">
+                <div className="p-2.5 bg-yellow-50 rounded-xl">
+                  <Clock3 className="text-yellow-600 w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-900 text-sm sm:text-base">
+                    Working Hours
+                  </h3>
+                  <p className="text-slate-600 text-sm font-medium">
+                    9:00 AM - 9:00 PM
+                  </p>
+                  <p className="text-slate-400 text-xs mt-0.5">
+                    Monday to Sunday (All Days Open)
+                  </p>
+                </div>
+              </div>
 
-                <p className="text-center text-[10px] sm:text-xs text-slate-400 mt-2">
-                  We respect your privacy. Your details are secure with us.
-                </p>
+            </div>
 
-              </form>
-
+            {/* Trust Badges */}
+            <div className="bg-white p-6 rounded-2xl shadow-lg">
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="text-cyan-600 font-bold text-xl">25+</p>
+                  <p className="text-slate-500 text-[10px] uppercase tracking-wider">Years of Trust</p>
+                </div>
+                <div>
+                  <p className="text-blue-600 font-bold text-xl">10K+</p>
+                  <p className="text-slate-500 text-[10px] uppercase tracking-wider">Happy Clients</p>
+                </div>
+                <div>
+                  <p className="text-emerald-600 font-bold text-xl">500+</p>
+                  <p className="text-slate-500 text-[10px] uppercase tracking-wider">Properties</p>
+                </div>
+              </div>
             </div>
 
           </div>
 
-        </div>
+          {/* Right - Contact Form */}
+          <ContactForm />
 
-        {/* Map Section */}
-        <div className="mt-8 sm:mt-10 md:mt-12 rounded-2xl overflow-hidden border border-slate-800 relative">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15551.704328656022!2d77.606275!3d12.934855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae167aab2dbd1b%3A0xf6a4b9c3e1f9b8f7!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000"
-            width="100%"
-            height="200"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Sri Durga Groups Office Location - Koramangala, Bengaluru"
-            className="filter grayscale hover:grayscale-0 transition-all duration-500"
-          />
-          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-slate-900/90 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg border border-slate-800">
-            <p className="text-white text-[10px] sm:text-xs flex items-center gap-1.5 sm:gap-2">
-              <MapPin className="w-3 h-3 text-red-400" />
-              Koramangala 8th Block, Bengaluru
-            </p>
-          </div>
         </div>
 
       </div>
-
-      {/* Structured Data for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Sri Durga Groups",
-            "alternateName": "Sri Durga Tours and Travels & Sri Durga Real Estate",
-            "description": "Sri Durga Groups provides premium tours and travels services and comprehensive real estate solutions including rental, lease, and sale properties in Bengaluru, Karnataka.",
-            "image": "https://sridurgagroups.com/logo.png",
-            "telephone": "+919980807508",
-            "email": "sridurgatravels.koramangala@gmail.com",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "537, Adugodi Main Road, Near Yashila, Koramangala 8th Block",
-              "addressLocality": "Bengaluru",
-              "addressRegion": "Karnataka",
-              "postalCode": "560095",
-              "addressCountry": "India"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 12.934855,
-              "longitude": 77.606275
-            },
-            "openingHours": "Mo-Su 09:00-21:00",
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "09:00",
-                "closes": "21:00"
-              }
-            ],
-            "priceRange": "₹₹",
-            "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "UPI", "Bank Transfer"],
-            "currenciesAccepted": "INR",
-            "areaServed": {
-              "@type": "City",
-              "name": "Bengaluru"
-            },
-            "hasMap": "https://maps.google.com/maps?q=Koramangala+Bengaluru",
-            "sameAs": [
-              "https://www.facebook.com/sridurgagroups",
-              "https://www.instagram.com/sridurgagroups"
-            ],
-            "department": [
-              {
-                "@type": "TravelAgency",
-                "name": "Sri Durga Tours and Travels",
-                "description": "Premium tours and travels services including airport transfers, outstation trips, corporate travel, tempo traveller rentals, and holiday packages.",
-                "serviceType": [
-                  "Airport Transfers",
-                  "Outstation Trips",
-                  "Corporate Travel",
-                  "Tempo Traveller Rental",
-                  "Holiday Packages",
-                  "Sightseeing Tours",
-                  "Cab Rentals"
-                ]
-              },
-              {
-                "@type": "RealEstateAgent",
-                "name": "Sri Durga Real Estate",
-                "description": "Comprehensive real estate solutions including property rental, leasing, and sales in Bengaluru.",
-                "serviceType": [
-                  "Property Rental",
-                  "Property Leasing",
-                  "Property Sale",
-                  "Commercial Leasing",
-                  "Site & Land Sales",
-                  "Property Investment Consulting"
-                ]
-              }
-            ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+919980807508",
-              "contactType": "Customer Service",
-              "availableLanguage": ["English", "Kannada", "Hindi"],
-              "hoursAvailable": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "09:00",
-                "closes": "21:00"
-              }
-            }
-          })
-        }}
-      />
-
     </section>
   );
 }
