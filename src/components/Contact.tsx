@@ -19,30 +19,30 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 bg-slate-950 text-white relative overflow-hidden"
+      className="py-8 sm:py-12 md:py-16 bg-slate-950 text-white relative overflow-hidden"
     >
       {/* Background Decorations */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-blue-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-cyan-500/5 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        <div className="text-center mb-12">
-          <span className="text-blue-400 font-semibold uppercase tracking-widest">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <span className="text-blue-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">
             Get In Touch
           </span>
 
-          <h1 className="mt-4 text-4xl md:text-5xl font-bold">
+          <h1 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
             <span className="text-cyan-400">Sri Durga</span> Groups
           </h1>
 
-          <p className="mt-4 text-xl text-slate-300 font-semibold">
+          <p className="mt-2 sm:mt-3 md:mt-4 text-base sm:text-lg md:text-xl text-slate-300 font-semibold">
             Tours & Travels | Real Estate
           </p>
 
-          <div className="mt-3 h-0.5 w-20 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
+          <div className="mt-2 sm:mt-3 h-0.5 w-16 sm:w-20 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
 
-          <p className="mt-6 text-slate-400 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm md:text-base lg:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed px-2">
             Connect with <span className="text-white font-medium">Sri Durga Groups</span> for premium 
             <span className="text-blue-400"> travel services</span> and trusted 
             <span className="text-emerald-400"> real estate solutions</span> across Bengaluru and Karnataka. 
@@ -51,132 +51,132 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
 
           {/* Left Side - Contact Information */}
           <div>
 
-            <div className="bg-slate-900 rounded-2xl p-8 border border-slate-800">
+            <div className="bg-slate-900 rounded-2xl p-5 sm:p-6 md:p-8 border border-slate-800">
 
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg">
-                  <Building2 className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-4 sm:mb-5 md:mb-6">
+                <div className="p-1.5 sm:p-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg">
+                  <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
-                <h2 className="text-2xl font-semibold">
+                <h2 className="text-xl sm:text-2xl font-semibold">
                   Sri Durga Groups
                 </h2>
               </div>
 
-              <p className="text-slate-400 mb-8 leading-relaxed text-sm">
+              <p className="text-slate-400 mb-5 sm:mb-6 md:mb-8 leading-relaxed text-xs sm:text-sm">
                 Your trusted partner for <span className="text-white">tours & travels</span> and 
                 <span className="text-white"> real estate</span> services in Bengaluru since 1998.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6">
 
                 {/* Phone */}
-                <div className="flex gap-4 group">
-                  <div className="p-2.5 bg-blue-500/10 rounded-xl group-hover:bg-blue-500/20 transition-colors">
-                    <Phone className="text-blue-400" size={20} />
+                <div className="flex gap-3 sm:gap-4 group">
+                  <div className="p-2 sm:p-2.5 bg-blue-500/10 rounded-xl group-hover:bg-blue-500/20 transition-colors flex-shrink-0 h-fit">
+                    <Phone className="text-blue-400" size={18} />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-slate-300">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-xs sm:text-sm font-medium text-slate-300">
                       Call Us - Tours & Travels
                     </h4>
                     <a
                       href="tel:+919980807508"
-                      className="text-slate-400 hover:text-white transition-colors text-lg font-semibold block"
+                      className="text-slate-400 hover:text-white transition-colors text-base sm:text-lg font-semibold block truncate"
                     >
                       +91 99808 07508
                     </a>
-                    <p className="text-slate-500 text-xs mt-0.5">
+                    <p className="text-slate-500 text-[10px] sm:text-xs mt-0.5">
                       Available 9 AM - 9 PM (All Days)
                     </p>
                   </div>
                 </div>
 
                 {/* WhatsApp */}
-                <div className="flex gap-4 group">
-                  <div className="p-2.5 bg-green-500/10 rounded-xl group-hover:bg-green-500/20 transition-colors">
-                    <MessageCircle className="text-green-400" size={20} />
+                <div className="flex gap-3 sm:gap-4 group">
+                  <div className="p-2 sm:p-2.5 bg-green-500/10 rounded-xl group-hover:bg-green-500/20 transition-colors flex-shrink-0 h-fit">
+                    <MessageCircle className="text-green-400" size={18} />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-slate-300">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-xs sm:text-sm font-medium text-slate-300">
                       WhatsApp
                     </h4>
                     <a
                       href="https://wa.me/919980807508"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-white transition-colors text-lg font-semibold block"
+                      className="text-slate-400 hover:text-white transition-colors text-base sm:text-lg font-semibold block truncate"
                     >
                       Chat with Us
                     </a>
-                    <p className="text-slate-500 text-xs mt-0.5">
+                    <p className="text-slate-500 text-[10px] sm:text-xs mt-0.5">
                       Quick response on WhatsApp
                     </p>
                   </div>
                 </div>
 
                 {/* Email */}
-                <div className="flex gap-4 group">
-                  <div className="p-2.5 bg-purple-500/10 rounded-xl group-hover:bg-purple-500/20 transition-colors">
-                    <Mail className="text-purple-400" size={20} />
+                <div className="flex gap-3 sm:gap-4 group">
+                  <div className="p-2 sm:p-2.5 bg-purple-500/10 rounded-xl group-hover:bg-purple-500/20 transition-colors flex-shrink-0 h-fit">
+                    <Mail className="text-purple-400" size={18} />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-slate-300">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-xs sm:text-sm font-medium text-slate-300">
                       Email Us
                     </h4>
                     <a
                       href="mailto:sridurgatravels.koramangala@gmail.com"
-                      className="text-slate-400 hover:text-white transition-colors text-lg font-semibold block"
+                      className="text-slate-400 hover:text-white transition-colors text-sm sm:text-base lg:text-lg font-semibold block truncate"
                     >
                       sridurgatravels.koramangala@gmail.com
                     </a>
-                    <p className="text-slate-500 text-xs mt-0.5">
+                    <p className="text-slate-500 text-[10px] sm:text-xs mt-0.5">
                       For general enquiries
                     </p>
                   </div>
                 </div>
 
                 {/* Address */}
-                <div className="flex gap-4 group">
-                  <div className="p-2.5 bg-red-500/10 rounded-xl group-hover:bg-red-500/20 transition-colors">
-                    <MapPin className="text-red-400" size={20} />
+                <div className="flex gap-3 sm:gap-4 group">
+                  <div className="p-2 sm:p-2.5 bg-red-500/10 rounded-xl group-hover:bg-red-500/20 transition-colors flex-shrink-0 h-fit">
+                    <MapPin className="text-red-400" size={18} />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-slate-300">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-xs sm:text-sm font-medium text-slate-300">
                       Office Address
                     </h4>
-                    <p className="text-slate-400 text-sm leading-relaxed">
+                    <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
                       537, Adugodi Main Road,
                       <br />
                       Near Yashila, Koramangala 8th Block,
                       <br />
                       Bengaluru - 560095, Karnataka
                     </p>
-                    <p className="text-slate-500 text-xs mt-1">
+                    <p className="text-slate-500 text-[10px] sm:text-xs mt-1">
                       Landmark: Near Yashila Junction
                     </p>
                   </div>
                 </div>
 
                 {/* Working Hours */}
-                <div className="flex gap-4 group">
-                  <div className="p-2.5 bg-yellow-500/10 rounded-xl group-hover:bg-yellow-500/20 transition-colors">
-                    <Clock3 className="text-yellow-400" size={20} />
+                <div className="flex gap-3 sm:gap-4 group">
+                  <div className="p-2 sm:p-2.5 bg-yellow-500/10 rounded-xl group-hover:bg-yellow-500/20 transition-colors flex-shrink-0 h-fit">
+                    <Clock3 className="text-yellow-400" size={18} />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-slate-300">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-xs sm:text-sm font-medium text-slate-300">
                       Working Hours
                     </h4>
-                    <p className="text-white font-medium text-lg">
+                    <p className="text-white font-medium text-base sm:text-lg">
                       9:00 AM - 9:00 PM
                     </p>
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-slate-400 text-xs sm:text-sm">
                       Monday to Sunday (All Days Open)
                     </p>
-                    <p className="text-slate-500 text-xs mt-1">
+                    <p className="text-slate-500 text-[10px] sm:text-xs mt-1">
                       Bookings & Enquiries welcome 24/7 via WhatsApp
                     </p>
                   </div>
@@ -185,28 +185,28 @@ export default function Contact() {
               </div>
 
               {/* Quick Service Links */}
-              <div className="mt-8 pt-6 border-t border-slate-800">
-                <h4 className="text-sm font-medium text-slate-300 mb-3">
+              <div className="mt-6 sm:mt-7 md:mt-8 pt-5 sm:pt-6 border-t border-slate-800">
+                <h4 className="text-xs sm:text-sm font-medium text-slate-300 mb-2 sm:mb-3">
                   Our Services
                 </h4>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 flex items-center gap-1.5">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-slate-800 rounded-full text-[10px] sm:text-xs text-slate-300 flex items-center gap-1 sm:gap-1.5">
                     <Car className="w-3 h-3 text-blue-400" />
                     Airport Transfers
                   </span>
-                  <span className="px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 flex items-center gap-1.5">
+                  <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-slate-800 rounded-full text-[10px] sm:text-xs text-slate-300 flex items-center gap-1 sm:gap-1.5">
                     <Car className="w-3 h-3 text-cyan-400" />
                     Outstation Trips
                   </span>
-                  <span className="px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 flex items-center gap-1.5">
+                  <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-slate-800 rounded-full text-[10px] sm:text-xs text-slate-300 flex items-center gap-1 sm:gap-1.5">
                     <Home className="w-3 h-3 text-emerald-400" />
                     Property Rentals
                   </span>
-                  <span className="px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 flex items-center gap-1.5">
+                  <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-slate-800 rounded-full text-[10px] sm:text-xs text-slate-300 flex items-center gap-1 sm:gap-1.5">
                     <Building2 className="w-3 h-3 text-violet-400" />
                     Property Sales
                   </span>
-                  <span className="px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 flex items-center gap-1.5">
+                  <span className="px-2 sm:px-3 py-1 sm:py-1.5 bg-slate-800 rounded-full text-[10px] sm:text-xs text-slate-300 flex items-center gap-1 sm:gap-1.5">
                     <Calendar className="w-3 h-3 text-purple-400" />
                     Holiday Packages
                   </span>
@@ -214,18 +214,18 @@ export default function Contact() {
               </div>
 
               {/* Trust Badges */}
-              <div className="mt-6 grid grid-cols-3 gap-3 pt-4 border-t border-slate-800">
+              <div className="mt-4 sm:mt-5 md:mt-6 grid grid-cols-3 gap-2 sm:gap-3 pt-4 sm:pt-5 border-t border-slate-800">
                 <div className="text-center">
-                  <p className="text-cyan-400 font-bold text-lg">25+</p>
-                  <p className="text-slate-500 text-[10px] uppercase tracking-wider">Years of Trust</p>
+                  <p className="text-cyan-400 font-bold text-base sm:text-lg">25+</p>
+                  <p className="text-slate-500 text-[8px] sm:text-[10px] uppercase tracking-wider">Years of Trust</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-blue-400 font-bold text-lg">10K+</p>
-                  <p className="text-slate-500 text-[10px] uppercase tracking-wider">Happy Clients</p>
+                  <p className="text-blue-400 font-bold text-base sm:text-lg">10K+</p>
+                  <p className="text-slate-500 text-[8px] sm:text-[10px] uppercase tracking-wider">Happy Clients</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-emerald-400 font-bold text-lg">500+</p>
-                  <p className="text-slate-500 text-[10px] uppercase tracking-wider">Properties</p>
+                  <p className="text-emerald-400 font-bold text-base sm:text-lg">500+</p>
+                  <p className="text-slate-500 text-[8px] sm:text-[10px] uppercase tracking-wider">Properties</p>
                 </div>
               </div>
             </div>
@@ -235,55 +235,55 @@ export default function Contact() {
           {/* Right Side - Contact Form */}
           <div>
 
-            <div className="bg-white rounded-2xl p-8 text-slate-900 shadow-2xl">
+            <div className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 text-slate-900 shadow-2xl">
 
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg">
-                  <Send className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-3 mb-4 sm:mb-5 md:mb-6">
+                <div className="p-1.5 sm:p-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg">
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
                   Quick Enquiry
                 </h2>
               </div>
 
-              <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+              <p className="text-slate-500 text-xs sm:text-sm mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                 Fill in the details below and our team will get back to you within 30 minutes. 
                 We provide expert assistance for <strong className="text-blue-600">Tours & Travels</strong> and 
                 <strong className="text-emerald-600"> Real Estate</strong> requirements.
               </p>
 
-              <form className="space-y-4">
+              <form className="space-y-3 sm:space-y-4">
 
                 <div>
-                  <label className="text-sm font-medium text-slate-700 block mb-1.5">
+                  <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     placeholder="Enter your full name"
-                    className="w-full border border-slate-300 rounded-xl px-4 py-3 outline-none focus:border-blue-600 transition-colors text-sm"
+                    className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors text-sm"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-slate-700 block mb-1.5">
+                  <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
                     Phone Number <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
                     placeholder="Enter your phone number"
-                    className="w-full border border-slate-300 rounded-xl px-4 py-3 outline-none focus:border-blue-600 transition-colors text-sm"
+                    className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors text-sm"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-slate-700 block mb-1.5">
+                  <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
                     Service Required <span className="text-red-500">*</span>
                   </label>
                   <select
-                    className="w-full border border-slate-300 rounded-xl px-4 py-3 outline-none focus:border-blue-600 transition-colors text-sm appearance-none bg-white"
+                    className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors text-sm appearance-none bg-white"
                     required
                   >
                     <option value="">Select a service</option>
@@ -300,49 +300,49 @@ export default function Contact() {
                   </select>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label className="text-sm font-medium text-slate-700 block mb-1.5">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
                       Pickup / Location
                     </label>
                     <input
                       type="text"
                       placeholder="Enter location"
-                      className="w-full border border-slate-300 rounded-xl px-4 py-3 outline-none focus:border-blue-600 transition-colors text-sm"
+                      className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors text-sm"
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-slate-700 block mb-1.5">
+                    <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
                       Destination (if travel)
                     </label>
                     <input
                       type="text"
                       placeholder="Enter destination"
-                      className="w-full border border-slate-300 rounded-xl px-4 py-3 outline-none focus:border-blue-600 transition-colors text-sm"
+                      className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors text-sm"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-slate-700 block mb-1.5">
+                  <label className="text-xs sm:text-sm font-medium text-slate-700 block mb-1 sm:mb-1.5">
                     Travel / Property Details
                   </label>
                   <textarea
                     rows={4}
                     placeholder="Tell us about your travel or property requirement..."
-                    className="w-full border border-slate-300 rounded-xl px-4 py-3 outline-none focus:border-blue-600 transition-colors resize-none text-sm"
+                    className="w-full border border-slate-300 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 outline-none focus:border-blue-600 transition-colors resize-none text-sm"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] text-base shadow-lg"
+                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white py-3 sm:py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] text-sm sm:text-base shadow-lg"
                 >
-                  <Send size={18} />
+                  <Send size={16} />
                   Send Enquiry
                 </button>
 
-                <p className="text-center text-xs text-slate-400 mt-2">
+                <p className="text-center text-[10px] sm:text-xs text-slate-400 mt-2">
                   We respect your privacy. Your details are secure with us.
                 </p>
 
@@ -355,11 +355,11 @@ export default function Contact() {
         </div>
 
         {/* Map Section */}
-        <div className="mt-12 rounded-2xl overflow-hidden border border-slate-800">
+        <div className="mt-8 sm:mt-10 md:mt-12 rounded-2xl overflow-hidden border border-slate-800 relative">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15551.704328656022!2d77.606275!3d12.934855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae167aab2dbd1b%3A0xf6a4b9c3e1f9b8f7!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000"
             width="100%"
-            height="250"
+            height="200"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
@@ -367,8 +367,8 @@ export default function Contact() {
             title="Sri Durga Groups Office Location - Koramangala, Bengaluru"
             className="filter grayscale hover:grayscale-0 transition-all duration-500"
           />
-          <div className="absolute bottom-4 left-4 bg-slate-900/90 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-800">
-            <p className="text-white text-xs flex items-center gap-2">
+          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-slate-900/90 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg border border-slate-800">
+            <p className="text-white text-[10px] sm:text-xs flex items-center gap-1.5 sm:gap-2">
               <MapPin className="w-3 h-3 text-red-400" />
               Koramangala 8th Block, Bengaluru
             </p>
