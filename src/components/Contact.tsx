@@ -128,10 +128,10 @@ export default function Contact() {
                       Email Us
                     </h4>
                     <a
-                      href="mailto:info@sridurgagroups.com"
+                      href="mailto:sridurgatravels.koramangala@gmail.com"
                       className="text-slate-400 hover:text-white transition-colors text-lg font-semibold block"
                     >
-                      info@sridurgagroups.com
+                      sridurgatravels.koramangala@gmail.com
                     </a>
                     <p className="text-slate-500 text-xs mt-0.5">
                       For general enquiries
@@ -389,7 +389,7 @@ export default function Contact() {
             "description": "Sri Durga Groups provides premium tours and travels services and comprehensive real estate solutions including rental, lease, and sale properties in Bengaluru, Karnataka.",
             "image": "https://sridurgagroups.com/logo.png",
             "telephone": "+919980807508",
-            "email": "info@sridurgagroups.com",
+            "email": "sridurgatravels.koramangala@gmail.com",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "537, Adugodi Main Road, Near Yashila, Koramangala 8th Block",
