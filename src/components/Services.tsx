@@ -251,6 +251,7 @@ const tripImages = [
   "/trip/s14.png",
   "/trip/s15.png",
   "/trip/s16.png",
+  "/trip/s17.png",
 ];
 
 // Floating images for background
