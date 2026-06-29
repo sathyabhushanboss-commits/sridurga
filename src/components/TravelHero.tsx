@@ -123,7 +123,7 @@ export default function TravelHero() {
 
             </div>
 
-            {/* CTA */}
+            {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mt-10">
 
               <a
@@ -134,14 +134,38 @@ export default function TravelHero() {
                 <ArrowRight size={18} />
               </a>
 
-              <a
-                href="tel:+919980807508"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-slate-900 font-semibold hover:shadow-xl transition-all"
-              >
-                <Phone size={18} />
-                Call Now
-              </a>
+              {/* Call Now - Two Numbers */}
+              <div className="flex flex-col gap-2">
+                <a
+                  href="tel:+919980807508"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-slate-900 font-semibold hover:shadow-xl transition-all"
+                >
+                  <Phone size={18} />
+                  Call: 99808 07508
+                </a>
+                <a
+                  href="tel:+919980567508"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/90 text-slate-900 font-semibold hover:shadow-xl transition-all"
+                >
+                  <Phone size={18} />
+                  Call: 99805 67508
+                </a>
+              </div>
 
+            </div>
+
+            {/* Both Phone Numbers Display */}
+            <div className="mt-6 space-y-2">
+              <div className="flex items-center gap-3 text-slate-300">
+                <Phone size={18} className="text-cyan-400" />
+                <span className="text-lg font-medium text-white">99805 67508</span>
+                <span className="text-sm text-slate-400">| 24/7 Available</span>
+              </div>
+              <div className="flex items-center gap-3 text-slate-300 pl-[2px]">
+                <span className="w-[18px]" /> {/* Spacer for alignment */}
+                <span className="text-lg font-medium text-white">99808 07508</span>
+                <span className="text-sm text-slate-400">| WhatsApp</span>
+              </div>
             </div>
 
           </motion.div>
